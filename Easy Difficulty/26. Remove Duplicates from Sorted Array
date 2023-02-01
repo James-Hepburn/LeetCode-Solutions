@@ -1,0 +1,6 @@
+class Solution(object):
+    def removeDuplicates(self, nums):
+        for i in nums:
+            for j in nums:
+                if nums.count(j) > 1:
+                    nums.remove(j)
