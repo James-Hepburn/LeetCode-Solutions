@@ -1,0 +1,7 @@
+class Solution(object):
+    def average(self, salary):
+        list = sorted (salary)
+        avg = 0
+        for i in range (1, len(list) - 1):
+            avg += list[i]
+        return avg / float(len (list) - 2)
