@@ -1,0 +1,8 @@
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        for i in ransomNote:
+            c1 = ransomNote.count (i)
+            c2 = magazine.count (i)
+            if c2 < c1:
+                return False
+        return True
