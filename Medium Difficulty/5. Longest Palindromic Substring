@@ -1,0 +1,13 @@
+class Solution(object):
+    def longestPalindrome(self, s):
+        res = s[0]
+        for i in range (0, len (s)):
+            if len (s) - i < len (res):
+                break
+            for j in range (i, len (s)):
+                temp = s[i:j+1]
+                if self.isPalindrome (temp) and len (temp) > len (res):
+                    res = temp
+        return res
+    def isPalindrome (self, s):
+        return s == s[::-1]
