@@ -1,0 +1,10 @@
+class Solution(object):
+    def moveZeroes(self, nums):
+        count = 0
+        while nums.count (0) > 0:
+            count += 1
+            nums.remove (0)
+        while count > 0:
+            nums.append (0)
+            count -= 1
+        return nums
