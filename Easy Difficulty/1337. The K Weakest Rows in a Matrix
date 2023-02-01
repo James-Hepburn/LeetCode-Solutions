@@ -1,0 +1,12 @@
+class Solution(object):
+    def kWeakestRows(self, mat, k):
+        map = {}
+        for i in range (len(mat)):
+            map[i] = self.countSoldiers (mat[i])
+        res = sorted (map.items(), key=lambda x:x[1])
+        list = []
+        for i in range (k):
+            list.append (res[i][0])
+        return list
+    def countSoldiers (self, row):
+        return "".join(map(str, row)).count ("1")
