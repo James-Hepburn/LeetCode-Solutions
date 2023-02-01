@@ -1,0 +1,6 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        temp = list (set (nums))
+        for i in temp:
+            if nums.count(i) > floor (len (nums) / 2):
+                return i
