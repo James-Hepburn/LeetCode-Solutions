@@ -1,0 +1,15 @@
+class Solution(object):
+    def isValid(self, s):
+        open = ["(", "[", "{"]
+        closed = [")", "]", "}"]
+        stack = []
+        for i in s:
+            if i in open:
+                stack.append(i)
+            else:
+                pos = closed.index(i)
+                if (len(stack) > 0 and (open[pos] == stack[len(stack)-1])):
+                    stack.pop()
+                else:
+                    return False
+        return len(stack) == 0
