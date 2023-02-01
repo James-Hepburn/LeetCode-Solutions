@@ -1,0 +1,9 @@
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        count = 0
+        for i in s[::-1].strip():
+            if i == " ":
+                break
+            else:
+                count += 1
+        return count
