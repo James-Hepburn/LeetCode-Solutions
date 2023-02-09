@@ -1,0 +1,9 @@
+class Solution(object):
+    def separateDigits(self, nums):
+        answer = []
+        for i in nums:
+            answer += self.split (i)
+        return answer
+
+    def split (self, value):
+        return [int(i) for i in str(value)]
