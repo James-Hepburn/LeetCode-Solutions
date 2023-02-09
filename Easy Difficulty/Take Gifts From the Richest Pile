@@ -1,0 +1,7 @@
+class Solution(object):
+    def pickGifts(self, gifts, k):
+        while k > 0:
+            k -= 1
+            max_pile = max (gifts)
+            gifts[gifts.index(max_pile)] = floor (sqrt (max_pile))
+        return int (sum (gifts))
