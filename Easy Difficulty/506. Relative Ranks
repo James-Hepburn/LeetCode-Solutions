@@ -1,0 +1,22 @@
+class Solution(object):
+    def findRelativeRanks(self, score):
+        original = list(score)
+        score.sort()
+        result = []
+        for i in range (0, len (score)):
+            if i == 0:
+                result.append ("Gold Medal")
+            elif i == 1:
+                result.append ("Silver Medal")
+            elif i == 2:
+                result.append ("Bronze Medal")
+            else:
+                result.append (str (i+1))
+        index = 0
+        answer = [0] * len (score)
+        while len (score) > 0:
+            top = max (score)
+            answer [original.index(top)] = result [index]
+            index += 1
+            score.remove (top)
+        return answer
