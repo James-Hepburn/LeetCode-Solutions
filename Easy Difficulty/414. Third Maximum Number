@@ -1,0 +1,7 @@
+class Solution(object):
+    def thirdMax(self, nums):
+        arr = list (set (nums))
+        if len(arr) < 3:
+            return max (arr)
+        arr.sort()
+        return arr[len(arr) - 3]
