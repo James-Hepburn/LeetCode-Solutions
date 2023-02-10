@@ -1,0 +1,9 @@
+class Solution(object):
+    def intersect(self, nums1, nums2):
+        result = []
+        for i in nums1:
+            if i in nums2 and i not in result:
+                times = min (nums1.count (i), nums2.count (i))
+                for j in range (times):
+                    result.append (i)
+        return result
