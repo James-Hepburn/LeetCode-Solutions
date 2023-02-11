@@ -1,0 +1,22 @@
+class Solution(object):
+    def wordPattern(self, pattern, s):
+        dict = {}
+        list = s.split()
+
+        if len(list) != len (pattern):
+            return False
+
+        for i in range (0, len (list)):
+            if pattern[i] in dict:
+                if dict[pattern[i]] != list[i]:
+                    return False
+            else:
+                if list[i] in dict.values():
+                    return False
+                dict[pattern[i]] = list[i]
+
+        for i in range (0, len (list)):
+            if dict[pattern[i]] != list[i]:
+                return False
+
+        return True
