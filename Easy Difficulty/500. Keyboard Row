@@ -1,0 +1,17 @@
+class Solution(object):
+    def findWords(self, words):
+        result = []
+        for i in words:
+            if self.check_row (i, "qwertyuiop"):
+                result.append (i)
+            if self.check_row (i, "asdfghjkl"):
+                result.append (i)
+            if self.check_row (i, "zxcvbnm"):
+                result.append (i)
+        return result
+
+    def check_row (self, word, row):
+        for i in word:
+            if i.lower() not in row:
+                return False
+        return True
